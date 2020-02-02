@@ -118,7 +118,7 @@ def draw_ellipse(position, covariance, ax=None, **kwargs):
         U, s, Vt = np.linalg.svd(covariance)
         angle = np.degrees(np.arctan2(U[1, 0], U[0, 0]))
         width, height = 2 * np.sqrt(s)
-    elif covariance.shape == (2,):
+    elif covariance.shape == (2,): # this was added from the original code
         angle = 0
         width, height = 2 * np.sqrt(covariance)
     else: 
